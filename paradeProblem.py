@@ -13,12 +13,12 @@ f = open('paradaProblemOutput.txt','w')
 def validRow(row):
 	# Input: row (list)
 	# Output: True/false, if the row valid.
-	if row.count(row[-1])>6:
+	checkThis = row[-1]
+	if row.count(checkThis)>6:
 		return False
-	# for pos1 in xrange(len(row)):
-		# for pos2 in range(pos1+row[pos1],len(row)):
-			# if row[pos2] >= row[pos1]:
-				# return False
+	for pos in xrange(len(row)-11):
+		if checkThis > row[pos]:
+			return False
 
 	for pos in xrange(len(row)):
 		if pos==0:
@@ -61,19 +61,19 @@ def nextCards(row):
 	newRows = [rows for rows in result if validRow(rows)]
 	return newRows
 
-def problemSolved(row):
+def problemSolved(row,sorts):
 	if row != False and len(row) >= condition and validRow(row):
 		return True
 	else:
 		return False
 
-def solveRow(row):
+def solveRow(row,sorts):
 	if problemSolved(row):
 		return row
 	else:
 		return solveRowList(nextCards(row))
 
-def solveRowList(rowlist):
+def solveRowList(rowlist,sortslist):
 	if rowlist == []:
 		return False
 	else:
@@ -86,6 +86,7 @@ def solveRowList(rowlist):
 			return solveRowList(rowlist[1:])
 			
 row = [9]
-condition = 17
+sorts = [0]
+condition = 16
 print solveRow(row)
 f.close()
