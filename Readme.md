@@ -6,4 +6,4 @@ This algorithm tries to find the longest possible row of cards that do not break
  1. If there exists a card of rank i and at position j there cannot be a card at positions >= j+i with rank >= i.
  2. If there exists a card of rank i, at positions j and some type there cannot be a card of the same type at positions >= j+i of any rank.
  
- So far the longest possible row I've found using this algorithm is 24.
+So far the longest possible row I've found using this algorithm is 24.
