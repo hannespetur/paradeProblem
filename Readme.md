@@ -1,6 +1,6 @@
 # The Parade Problem
 ## Overview
-[Parade](http://boardgamegeek.com/boardgame/56692/parade) is a card game published 2007. The cards are of six different colours/sorts and have a rank of 0-10, so in total 66 cards.
+[Parade](http://boardgamegeek.com/boardgame/56692/parade) is a card game published in 2007. The playing cards are of six different colours/sorts and have a rank of 0-10, so in total 66 cards.
 
 This algorithm tries to find the longest possible row of cards that do not break the games' two rules (if you break those rules, you'll need to take someone out of the parade):
  1. If there exists a card of rank i and at position j there cannot be a card at positions >= j+i with rank >= i.
